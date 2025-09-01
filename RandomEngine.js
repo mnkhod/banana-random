@@ -12,6 +12,14 @@ export default class RandomEngine {
     return this.range < this.winRate ? true : false;
   }
 
+  calculateRockPaperScissors() {
+    this.generateSeed()
+
+    if (this.range.toFixed(1) == this.winRate.toString()) return "DRAW"
+
+    return this.range < this.winRate ? "WIN" : "LOSE";
+  }
+
   generateSeed() {
     let array = new Uint32Array(1);
 
