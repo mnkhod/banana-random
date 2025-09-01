@@ -9,7 +9,7 @@ export default class RandomEngine {
   calculateWin() {
     this.generateSeed()
 
-    return this.range <= this.winRate ? true : false;
+    return this.range < this.winRate ? true : false;
   }
 
   generateSeed() {
