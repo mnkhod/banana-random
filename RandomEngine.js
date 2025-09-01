@@ -14,9 +14,14 @@ export default class RandomEngine {
 
   generateSeed() {
     let array = new Uint32Array(1);
-    // Cryptograpically Secure RNG
-    // Non-Deterministic
-    // OS-Level CSPRNG
+
+    // OS-Level CSPRNG ( Cryptograpically Secure Pseudo-Random Number Generator )
+    //  Calculates based on these sources
+    //    - CPU Timing Jitter
+    //    - Mouse Movements, Network Timings
+    //    - OS Randomness Pools
+    // Non-Deterministic.
+    // Designed to resist prediction.
     crypto.getRandomValues(array) // Format - 3765924854
     let range = array[0] / 0xffffffff // Float between 0 and 1
 
